@@ -1,4 +1,4 @@
-The program:
+"""
 As Terry Pratchett explains in Men At Arms:
 "Trolls traditionally count like this: (...) one, two, three... many (...) many-one, many-two, many-three, many-many, many-many-one, many-many-two, many-many-three, many-many-many, many-many-many-one, many-many-many-two, many-many-many-three, LOTS."
 
@@ -23,7 +23,7 @@ Input
 1
 Output
 one
-
+"""
 
 n = int(input())
 out = ""

@@ -1,4 +1,4 @@
-The program:
+"""
 Given the coordinates of the points 1 and 2, fill the grid of the given size in order to indicate which character is the closest. We will use here the Manhattan distance: d(A, B) = abs(Ax - Bx) + abs(Ay - By).
 
 Display a grid that contains, in each cell, the character:
@@ -35,7 +35,7 @@ Output
 11111022X2
 1111102222
 1111102222
-
+"""
 
 def dist(a, b):
     return abs(a[0] - b[0]) + abs(a[1] - b[1])

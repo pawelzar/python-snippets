@@ -1,4 +1,4 @@
-The program:
+"""
 You program must read two strings message and key and output the decrypted message using the Vigenère cipher.
 
 The character 'a' is by convention equivalent to 0 and 'z' is equivalent to '25'.
@@ -26,7 +26,7 @@ cpfioiang
 abcabcabc
 Output
 codingame
-
+"""
 
 message = [ord(x)-97 for x in input()]
 key = [ord(x)-97 for x in input()]

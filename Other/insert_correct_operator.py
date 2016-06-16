@@ -1,4 +1,4 @@
-The program:
+"""
 Your program must insert the correct operator (+, -, / or *) at the right index of an integer number N so that the resulting operation equals a given integer X.
 
 The operation is always valid and the result is always an integer. Plus "+" and minus "-" are the only operators that can be inserted at index 0.
@@ -16,7 +16,7 @@ Input
 3034 64
 Output
 30+34
-
+"""
 
 from operator import add, sub, mul, floordiv
 
@@ -31,5 +31,5 @@ for i in range(len(num)):
             if action(a, b) == int(result):
                 print("{0}{2}{1}".format(a if a != 0 else "", num[i:], sign))
                 break
-        except:
+        except ZeroDivisionError:
             pass

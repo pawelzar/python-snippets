@@ -1,4 +1,4 @@
-The program:
+"""
 Given a well written list of cities, your program must clean another list of cities that are sometime miswritten.
 
 Miswritten cities can contain or lack spaces, or have a different case than expected.
@@ -33,7 +33,6 @@ New York
 Montpellier
 
 
-The game mode is REVERSE: You do not have access to the statement. You have to guess what to do by observing the following set of tests:
 01 Test 1
 2
 Montpellier
@@ -110,7 +109,7 @@ Vienna
 Marrakech
 Vienna
 Le Mans
-
+"""
 
 correct = {}
 for i in range(int(input())):

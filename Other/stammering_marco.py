@@ -1,3 +1,4 @@
+"""
 Everytime Marco tries to speak, he stammers.
 If Marco has to say a text out loud, he will stammer on the first two letter of each word.
 
@@ -16,7 +17,7 @@ Input
 Hi there
 Output
 Hi th-there
-
+"""
 
 sentence = input().split()
 m = 0

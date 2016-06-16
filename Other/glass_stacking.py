@@ -1,3 +1,4 @@
+"""
 You are given a number, N, of glasses. Your job is to determine the largest pyramid that can be built with the glasses provided, and then create that pyramid in the output.
 
 A glass is represented in ASCII as follows:
@@ -41,7 +42,7 @@ Output
  * *   * * 
  * *   * * 
 ***** *****
-
+"""
 
 n = int(input())
 

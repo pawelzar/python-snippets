@@ -1,4 +1,4 @@
-The program:
+"""
 Your program must determine if a given string would be a safe password. Here, a password is considered safe if:
 It contains at least 8 characters.
 It contains at least 1 digit (0-9).
@@ -19,7 +19,7 @@ Input
 11/12/1978
 Output
 false
-
+"""
 
 import re
 

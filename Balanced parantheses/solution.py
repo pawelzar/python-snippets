@@ -1,5 +1,5 @@
 def is_balanced(sequence):
-    """CHeck if brackets in given sequence are properly closed."""
+    """Check if brackets in given sequence are properly closed."""
     brackets = "([{)]}"
     stack = []
 

@@ -7,11 +7,14 @@ class BracketsTest(unittest.TestCase):
         self.assertEqual(is_balanced("()"), True)
         self.assertEqual(is_balanced("()[]{}"), True)
         self.assertEqual(is_balanced("(({([({{[{()}]}})])}))(()[{}])"), True)
+        self.assertEqual(is_balanced("{This [(is)] f{i}ne}"), True)
+
 
     def testNegative(self):
         self.assertEqual(is_balanced("("), False)
         self.assertEqual(is_balanced("}"), False)
         self.assertEqual(is_balanced("    (([))]"), False)
+        self.assertEqual(is_balanced("This ([is)] just wrong"), False)
 
 
 if __name__ == '__main__':

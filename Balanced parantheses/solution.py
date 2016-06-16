@@ -3,7 +3,7 @@ def is_balanced(sequence):
     brackets = "([{)]}"
     stack = []
 
-    for a in input():
+    for a in sequence:
         if a in brackets[:3]:
             stack.append(brackets.index(a))
         elif a in brackets[3:]:

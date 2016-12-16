@@ -3,13 +3,13 @@ from solution import is_balanced
 
 
 class BracketsTest(unittest.TestCase):
-    def testPositive(self):
+    def test_positive(self):
         self.assertTrue(is_balanced("()"))
         self.assertTrue(is_balanced("()[]{}"))
         self.assertTrue(is_balanced("(({([({{[{()}]}})])}))(()[{}])"))
         self.assertTrue(is_balanced("{This [(is)] f{i}ne}"))
 
-    def testNegative(self):
+    def test_negative(self):
         self.assertFalse(is_balanced("("))
         self.assertFalse(is_balanced("}"))
         self.assertFalse(is_balanced("    (([))]"))

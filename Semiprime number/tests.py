@@ -3,7 +3,7 @@ from solution import is_semiprime
 
 
 class SemiPrimeTest(unittest.TestCase):
-    def testPositive(self):
+    def test_positive(self):
         self.assertTrue(is_semiprime(4))
         self.assertTrue(is_semiprime(14))
         self.assertTrue(is_semiprime(166))
@@ -13,7 +13,7 @@ class SemiPrimeTest(unittest.TestCase):
         self.assertTrue(is_semiprime(5398))
         self.assertTrue(is_semiprime(8777))
 
-    def testNegative(self):
+    def test_negative(self):
         self.assertFalse(is_semiprime(1))
         self.assertFalse(is_semiprime(2))
         self.assertFalse(is_semiprime(3))

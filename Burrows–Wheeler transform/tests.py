@@ -3,10 +3,10 @@ from solution import bw_transform
 
 
 class BWTransformTest(unittest.TestCase):
-    def testPositive(self):
+    def test_positive(self):
         self.assertEqual(bw_transform("BAHAMAS"), "4BHMSAAA")
 
-    def testNegative(self):
+    def test_negative(self):
         self.assertNotEqual(bw_transform("BAHAMAS"), "7SBAHAMA")
 
 

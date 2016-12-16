@@ -19,7 +19,7 @@ Output
 0
 """
 
-word = raw_input()
+word = input()
 i = 0
 possible = False
 while i <= len(word):
@@ -30,9 +30,9 @@ while i <= len(word):
             possible = True
             break
     if possible:
-        print i
+        print(i)
         break
     else:
         i += 1
 else:
-    print -1
+    print(-1)

@@ -35,4 +35,4 @@ if n/4 >= 1:
 	n %= 4
 if n > 0:
 	out += ['one','two','three'][n-1]
-print out.rstrip('-')
+print(out.rstrip('-'))

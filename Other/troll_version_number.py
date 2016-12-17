@@ -28,11 +28,11 @@ one
 n = int(input())
 out = ""
 if n/16 >= 1:
-	out += 'LOTS-' * int(n/16)
-	n %= 16
+    out += 'LOTS-' * int(n/16)
+    n %= 16
 if n/4 >= 1:
-	out += 'many-' * int(n/4)
-	n %= 4
+    out += 'many-' * int(n/4)
+    n %= 4
 if n > 0:
-	out += ['one','two','three'][n-1]
+    out += ['one', 'two', 'three'][n-1]
 print(out.rstrip('-'))

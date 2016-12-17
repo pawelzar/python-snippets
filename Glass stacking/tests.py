@@ -1,5 +1,5 @@
 import unittest
-from solution import glass_stacking
+from solution import glass_stack
 
 
 class GlassStackingTest(unittest.TestCase):
@@ -10,7 +10,7 @@ class GlassStackingTest(unittest.TestCase):
             ' * * ',
             '*****'
         ]
-        self.assertEqual(glass_stacking(1), result)
+        self.assertEqual(glass_stack(1), result)
 
     def test_4_glasses(self):
         result = [
@@ -23,7 +23,7 @@ class GlassStackingTest(unittest.TestCase):
             ' * *   * * ',
             '***** *****'
         ]
-        self.assertEqual(glass_stacking(4), result)
+        self.assertEqual(glass_stack(4), result)
 
     def test_10_glasses(self):
         result = [
@@ -44,7 +44,7 @@ class GlassStackingTest(unittest.TestCase):
             ' * *   * *   * *   * * ',
             '***** ***** ***** *****'
         ]
-        self.assertEqual(glass_stacking(10), result)
+        self.assertEqual(glass_stack(10), result)
 
     def test_25_glasses(self):
         result = [
@@ -73,7 +73,7 @@ class GlassStackingTest(unittest.TestCase):
             ' * *   * *   * *   * *   * *   * * ',
             '***** ***** ***** ***** ***** *****'
         ]
-        self.assertEqual(glass_stacking(25), result)
+        self.assertEqual(glass_stack(25), result)
 
 
 if __name__ == '__main__':

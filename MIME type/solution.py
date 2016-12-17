@@ -1,9 +1,9 @@
 import re
 
 
-def get_extensions(extensions, files):
+def get_mimes(extensions, files):
     """
-    Provide list of known extensions and list of files.
+    Provide list of known extensions with mime descriptions and list of files.
     Returns list of corresponding extension for each file.
     """
     mime = {ext.lower(): mt for ext, mt in [e.split() for e in extensions]}

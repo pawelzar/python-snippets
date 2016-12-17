@@ -1,5 +1,5 @@
 import unittest
-from solution import get_extensions
+from solution import get_mimes
 
 
 class ExtensionsTest(unittest.TestCase):
@@ -22,7 +22,7 @@ class ExtensionsTest(unittest.TestCase):
             'text/html'
         ]
 
-        self.assertEqual(get_extensions(extensions, files), correct)
+        self.assertEqual(get_mimes(extensions, files), correct)
 
     def test_unknown(self):
         extensions = [
@@ -45,7 +45,7 @@ class ExtensionsTest(unittest.TestCase):
             'UNKNOWN'
         ]
 
-        self.assertEqual(get_extensions(extensions, files), correct)
+        self.assertEqual(get_mimes(extensions, files), correct)
 
     def test_correct_division(self):
         extensions = [
@@ -82,7 +82,7 @@ class ExtensionsTest(unittest.TestCase):
             'UNKNOWN'
         ]
 
-        self.assertEqual(get_extensions(extensions, files), correct)
+        self.assertEqual(get_mimes(extensions, files), correct)
 
     def test_case_consideration(self):
         extensions = [
@@ -112,7 +112,7 @@ class ExtensionsTest(unittest.TestCase):
             'text/css'
         ]
 
-        self.assertEqual(get_extensions(extensions, files), correct)
+        self.assertEqual(get_mimes(extensions, files), correct)
 
 if __name__ == '__main__':
     unittest.main()

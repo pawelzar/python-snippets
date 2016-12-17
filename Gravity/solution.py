@@ -1,4 +1,5 @@
 def slide_down(art):
+    """Returns map with elements != '.' pushed to the bottom in each column."""
     height = len(art)
     lines = ["".join(x) for x in zip(*art)]
 

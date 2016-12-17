@@ -1,4 +1,4 @@
-def glass_stacking(number):
+def glass_stack(number):
     """
     Returns art composed of glasses stacked on top of each other
     in a triangular shape.
@@ -22,4 +22,4 @@ def glass_stacking(number):
 
 if __name__ == "__main__":
     n = int(input())
-    print("\n".join(line for line in glass_stacking(n)))
+    print("\n".join(glass_stack(n)))

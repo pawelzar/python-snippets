@@ -4,7 +4,10 @@ def dist(a, b):
 
 
 def grid_with_distance(width, height, point_a, point_b):
-    """Returns grid with every cell"""
+    """
+    Returns grid in which every cell means either it is
+    closer to point 1 or point 2.
+    """
     grid = []
 
     for y in range(height):
@@ -31,18 +34,4 @@ if __name__ == "__main__":
     point_1 = [int(i) for i in input().split()]
     point_2 = [int(i) for i in input().split()]
 
-    for y in range(height):
-        line = ""
-        for x in range(width):
-            dist_1 = dist((x, y), point_1)
-            dist_2 = dist((x, y), point_2)
-            if [x, y] == point_1 or [x, y] == point_2:
-                line += "X"
-            else:
-                if dist_1 < dist_2:
-                    line += "1"
-                elif dist_1 > dist_2:
-                    line += "2"
-                else:
-                    line += "0"
-        print(line)
+    print("\n".join(grid_with_distance(width, height, point_1, point_2)))

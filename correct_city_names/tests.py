@@ -2,79 +2,79 @@ import unittest
 from .solution import correct_names
 
 
-class CorrectNamesTest(unittest.TestCase):
-    def test_simple(self):
-        well_written = [
+class CorrectNamesTestCase(unittest.TestCase):
+    def test_basic(self):
+        correct = [
             'Montpellier',
             'New York'
         ]
 
-        bad_written = [
+        incorrect = [
             'new york',
             'NewYork',
             'montpellier',
         ]
 
-        correct = [
+        corrected = [
             'New York',
             'New York',
             'Montpellier'
         ]
 
-        self.assertEqual(correct_names(well_written, bad_written), correct)
+        self.assertEqual(correct_names(correct, incorrect), corrected)
 
     def test_same_letters(self):
-        well_written = [
+        correct = [
             'Kyoto',
             'Tokyo'
         ]
 
-        bad_written = [
+        incorrect = [
             'tokyo'
         ]
 
-        correct = [
+        corrected = [
             'Tokyo'
         ]
 
-        self.assertEqual(correct_names(well_written, bad_written), correct)
+        self.assertEqual(correct_names(correct, incorrect), corrected)
 
-    def test_divided(self):
-        well_written = [
+    def test_divided_name(self):
+        correct = [
             'Saint Petersburg',
             'San Francisco'
         ]
 
-        bad_written = [
+        incorrect = [
             'San Fran Cisco'
         ]
 
-        correct = [
+        corrected = [
             'San Francisco'
         ]
 
-        self.assertEqual(correct_names(well_written, bad_written), correct)
+        self.assertEqual(correct_names(correct, incorrect), corrected)
 
-    def test_good(self):
-        well_written = [
-            'Helsinki',
-            'Hanoi'
-        ]
-
-        bad_written = [
-            'Helsinki',
-            'Hanoi'
-        ]
-
+    def test_already_correct(self):
         correct = [
             'Helsinki',
             'Hanoi'
         ]
 
-        self.assertEqual(correct_names(well_written, bad_written), correct)
+        incorrect = [
+            'Helsinki',
+            'Hanoi'
+        ]
+
+        corrected = [
+            'Helsinki',
+            'Hanoi'
+        ]
+
+        self.assertEqual(correct_names(correct, incorrect), corrected)
 
     def test_diverse_set(self):
-        well_written = [
+        correct = [
             'Sydney',
             'Newcastle upon Tyne',
             'Marrakech',
@@ -82,7 +82,7 @@ class CorrectNamesTest(unittest.TestCase):
             'Vienna'
         ]
 
-        bad_written = [
+        incorrect = [
             'le mans',
             'Newcastle Upon Tyne',
             'MarraKech',
@@ -105,7 +105,7 @@ class CorrectNamesTest(unittest.TestCase):
             'SydneY'
         ]
 
-        correct = [
+        corrected = [
             'Le Mans',
             'Newcastle upon Tyne',
             'Marrakech',
@@ -128,7 +128,7 @@ class CorrectNamesTest(unittest.TestCase):
             'Sydney'
         ]
 
-        self.assertEqual(correct_names(well_written, bad_written), correct)
+        self.assertEqual(correct_names(correct, incorrect), corrected)
 
 
 if __name__ == '__main__':

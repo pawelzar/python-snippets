@@ -1,21 +1,24 @@
-def correct_names(well_written, bad_written):
-    """Returns list of corrected names."""
-    pattern = {"".join(name.lower().split()): name for name in well_written}
+def correct_names(correct, incorrect):
+    """
+    Correct wrongly written names according to provided list of correct names.
 
-    corrected_names = []
-    for name in bad_written:
-        corrected_name = pattern["".join(name.lower().split())]
-        corrected_names.append(corrected_name)
+    :param correct: list of names that are written correctly
+    :param incorrect: list of names that are written incorrectly
+    :return: list of corrected names
+    """
+    normalized = {normalize(name): name for name in correct}
+    return [normalized.get(normalize(name), '') for name in incorrect]
 
-    return corrected_names
+
+def normalize(name):
+    """
+    Return lowercase name without spaces.
+    """
+    return name.lower().replace(' ', '')
 
 
-if __name__ == "__main__":
-    correct = {}
-    for i in range(int(input())):
-        word = input()
-        correct["".join(word.lower().split())] = word
-
+if __name__ == '__main__':
+    correct = [input() for i in range(int(input()))]
     incorrect = [input() for i in range(int(input()))]
-    for word in incorrect:
-        print(correct["".join(word.lower().split())])
+
+    print('\n'.join(correct_names(correct, incorrect)))

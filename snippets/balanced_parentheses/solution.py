@@ -1,13 +1,14 @@
 def is_balanced(sequence):
-    """Check if brackets in given sequence are properly closed."""
+    """
+    Check if brackets in given sequence are properly closed.
+    """
     brackets = '([{)]}'
     stack = []
 
-    for a in sequence:
-        if a in brackets[:3]:
-            stack.append(brackets.index(a))
-        elif a in brackets[3:]:
-            if not (len(stack) > 0 and stack.pop() == brackets.index(a) % 3):
+    for char in sequence:
+        if char in brackets[:3]:
+            stack.append(brackets.index(char))
+        elif char in brackets[3:]:
+            if not (stack and stack.pop() == brackets.index(char) % 3):
                 return False
-    else:
-        return bool(not stack)
+    return not stack

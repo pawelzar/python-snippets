@@ -1,0 +1,5 @@
+[MASTER]
+ignore = tests.py
+
+[MESSAGES CONTROL]
+disable = C0103

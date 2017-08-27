@@ -18,16 +18,16 @@ def ascii_art(width, height, art, text):
                 text_in_art[line] += art[line][start:end]
         else:
             for line in range(height):
-                # represent character as '?' (last sign in provided art)
-                # if it wasn't recognized
+                # if character wasn't recognized then
+                # represent it as '?' (last sign in provided art)
                 text_in_art[line] += art[line][26 * width:]
 
     return text_in_art
 
 if __name__ == '__main__':
-    width = int(input())
-    height = int(input())
-    text = input()
-    art = [input() for i in range(height)]
+    WIDTH = int(input())
+    HEIGHT = int(input())
+    TEXT = input()
+    ART = [input() for i in range(HEIGHT)]
 
-    print('\n'.join(ascii_art(width, height, art, text)))
+    print('\n'.join(ascii_art(WIDTH, HEIGHT, ART, TEXT)))

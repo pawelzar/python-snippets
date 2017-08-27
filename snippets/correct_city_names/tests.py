@@ -1,8 +1,9 @@
-import unittest
+from unittest import TestCase
+
 from .solution import correct_names
 
 
-class CorrectNamesTestCase(unittest.TestCase):
+class CorrectNamesTestCase(TestCase):
     def test_basic(self):
         correct = [
             'Montpellier',
@@ -129,7 +130,3 @@ class CorrectNamesTestCase(unittest.TestCase):
         ]
 
         self.assertEqual(correct_names(correct, incorrect), corrected)
-
-
-if __name__ == '__main__':
-    unittest.main()

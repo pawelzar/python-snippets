@@ -1,26 +1,27 @@
-def dist(a, b):
-    """Returns Manhattan distance between point a and b."""
-    return abs(a[0] - b[0]) + abs(a[1] - b[1])
-
-
-def grid_with_distance(width, height, point_a, point_b):
+def grid_with_distance(width, height, point_1, point_2):
     """
-    Returns grid in which every cell means either it is
-    closer to point 1 or point 2.
+    Fill the grid with cells that mean either they are
+    closer to the first or the second point.
+
+    :param width: width of the grid
+    :param height: height of the grid
+    :param point_1: coordinates of first point
+    :param point_2: coordinates of second point
+    :return: grid represented as list of strings
     """
     grid = []
 
     for y in range(height):
         line = ''
         for x in range(width):
-            dist_a = dist((x, y), point_a)
-            dist_b = dist((x, y), point_b)
-            if (x, y) == point_a or (x, y) == point_b:
+            dist_1 = manhattan_distance((x, y), point_1)
+            dist_2 = manhattan_distance((x, y), point_2)
+            if (x, y) == point_1 or (x, y) == point_2:
                 line += 'X'
             else:
-                if dist_a < dist_b:
+                if dist_1 < dist_2:
                     line += '1'
-                elif dist_a > dist_b:
+                elif dist_1 > dist_2:
                     line += '2'
                 else:
                     line += '0'
@@ -29,9 +30,21 @@ def grid_with_distance(width, height, point_a, point_b):
     return grid
 
 
-if __name__ == '__main__':
-    width, height = [int(i) for i in input().split()]
-    point_1 = [int(i) for i in input().split()]
-    point_2 = [int(i) for i in input().split()]
+def manhattan_distance(point_1, point_2):
+    """
+    Compute Manhattan distance between two points. That is a distance on a
+    strictly horizontal and/or vertical path.
 
-    print('\n'.join(grid_with_distance(width, height, point_1, point_2)))
+    :param point_1: coordinates of first points
+    :param point_2:coordinates of second point
+    :return: distance between two points as integer
+    """
+    return abs(point_1[0] - point_2[0]) + abs(point_1[1] - point_2[1])
+
+
+if __name__ == '__main__':
+    WIDTH, HEIGHT = [int(i) for i in input().split()]
+    POINT_1 = [int(i) for i in input().split()]
+    POINT_2 = [int(i) for i in input().split()]
+
+    print('\n'.join(grid_with_distance(WIDTH, HEIGHT, POINT_1, POINT_2)))

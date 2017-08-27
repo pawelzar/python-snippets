@@ -1,26 +1,27 @@
-import unittest
-from .generators import Generator as g
+from unittest import TestCase
+
+from .generators import Generator
 
 
-class SquaresGeneratorTest(unittest.TestCase):
-    def test_simple(self):
-        sq = g.squares()
-        self.assertEqual(next(sq), 1,
+class SquaresGeneratorTestCase(TestCase):
+    def test_basic(self):
+        squares = Generator.squares()
+        self.assertEqual(next(squares), 1,
                          'Should return 1.')
-        self.assertEqual(next(sq), 1,
+        self.assertEqual(next(squares), 1,
                          'Should return square of 1.')
-        self.assertEqual(next(sq), 2,
+        self.assertEqual(next(squares), 2,
                          'Should return 2.')
-        self.assertEqual(next(sq), 4,
+        self.assertEqual(next(squares), 4,
                          'Should return square of 2.')
 
     def test_listed_squares(self):
-        squares_generator = g.squares()
+        squares = Generator.squares()
         generated = {}
 
         for i in range(10):
-            number = next(squares_generator)
-            square = next(squares_generator)
+            number = next(squares)
+            square = next(squares)
             generated[number] = square
 
         proper = {
@@ -33,48 +34,50 @@ class SquaresGeneratorTest(unittest.TestCase):
             7: 49,
             8: 64,
             9: 81,
-            10: 100
+            10: 100,
         }
 
         self.assertEqual(generated, proper)
 
 
-class FibonacciGeneratorTest(unittest.TestCase):
+class FibonacciGeneratorTestCase(TestCase):
     def test_empty(self):
-        generated = [x for x in g.fibonacci(0)]
+        generated = [number for number in Generator.fibonacci(0)]
         self.assertEqual(generated, [], 'Should return empty list.')
 
     def test_singular(self):
-        generated = [x for x in g.fibonacci(1)]
+        generated = [number for number in Generator.fibonacci(1)]
         self.assertEqual(generated, [0], 'Should return only one element.')
 
     def test_few(self):
-        generated = [x for x in g.fibonacci(6)]
-        self.assertEqual(generated, [0, 1,	1, 2, 3, 5],
+        generated = [number for number in Generator.fibonacci(6)]
+        self.assertEqual(generated, [0, 1, 1, 2, 3, 5],
                          'Should return 6 numbers from Fibonacci sequence.')
 
     def test_many(self):
-        generated = [x for x in g.fibonacci(20)]
-        proper = [0, 1,	1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,
-                  610, 987, 1597, 2584, 4181]
+        generated = [number for number in Generator.fibonacci(20)]
+        proper = [
+            0, 1, 1, 2, 3, 5, 8, 13, 21,
+            34, 55, 89, 144, 233, 377,
+            610, 987, 1597, 2584, 4181,
+        ]
         self.assertEqual(generated, proper,
                          'Should return 20 numbers from Fibonacci sequence.')
 
 
-class SplitGeneratorTest(unittest.TestCase):
-    def test_simple(self):
-        split_generator = g.split('This is a sample sentence', 'is')
-        generated = []
+class SplitGeneratorTestCase(TestCase):
+    def test_space_separator(self):
+        generated = [
+            number for number in Generator.split('This is a sample sentence')
+        ]
 
-        try:
-            while True:
-                word = next(split_generator)
-                generated.append(word)
-        except StopIteration:
-            pass
+        self.assertEqual(generated, ['This', 'is', 'a', 'sample', 'sentence'])
+
+    def test_word_separator(self):
+        generated = [
+            number for number in Generator.split(
+                'This is a sample sentence', 'is'
+            )
+        ]
 
         self.assertEqual(generated, ['Th', ' ', ' a sample sentence'])
-
-
-if __name__ == '__main__':
-    unittest.main()

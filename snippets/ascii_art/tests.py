@@ -1,8 +1,9 @@
-import unittest
+from unittest import TestCase
+
 from .solution import ascii_art
 
 
-class AsciiArtTest(unittest.TestCase):
+class AsciiArtTestCase(TestCase):
     def setUp(self):
         part_a_o = [
             ' #  ##   ## ##  ### ###  ## # # ###  ## # # #   # # ###  #  ',
@@ -83,7 +84,3 @@ class AsciiArtTest(unittest.TestCase):
             ascii_art(self.width, self.height, self.art, 'M@NH@TT@N'), result,
             'Should place \'?\' for \'@\' in M@NH@TT@N.'
         )
-
-
-if __name__ == '__main__':
-    unittest.main()

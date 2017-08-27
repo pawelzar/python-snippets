@@ -1,8 +1,9 @@
-import unittest
+from unittest import TestCase
+
 from .solution import is_balanced
 
 
-class BracketsTest(unittest.TestCase):
+class BracketsTestCase(TestCase):
     def test_positive(self):
         self.assertTrue(is_balanced('()'))
         self.assertTrue(is_balanced('()[]{}'))
@@ -21,7 +22,3 @@ class BracketsTest(unittest.TestCase):
         self.assertFalse(is_balanced('{[{iHTSc}]}p(R)m(){q({})'))
         self.assertFalse(is_balanced('h{Pn{GT{h}(c))}'))
         self.assertFalse(is_balanced('{([{S}]]6K[()]}'))
-
-
-if __name__ == '__main__':
-    unittest.main()

@@ -18,7 +18,7 @@ def normalize(name):
 
 
 if __name__ == '__main__':
-    correct = [input() for i in range(int(input()))]
-    incorrect = [input() for i in range(int(input()))]
+    CORRECT = [input() for i in range(int(input()))]
+    INCORRECT = [input() for i in range(int(input()))]
 
-    print('\n'.join(correct_names(correct, incorrect)))
+    print('\n'.join(correct_names(CORRECT, INCORRECT)))

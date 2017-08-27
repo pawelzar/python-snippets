@@ -25,12 +25,12 @@ n = 1
 out = [sentence[0]]
 
 if len(sentence) > 1:
-    out.append(sentence[1][:2] + "-" + sentence[1])
+    out.append(sentence[1][:2] + '-' + sentence[1])
 
 for word in sentence[2:]:
-    out.append((word[:2] + "-") * (m+n) + word)
+    out.append((word[:2] + '-') * (m+n) + word)
     temp = n
     n += m
     m = temp
 
-print(" ".join(out))
+print(' '.join(out))

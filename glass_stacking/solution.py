@@ -20,6 +20,6 @@ def glass_stack(number):
     return glasses
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     n = int(input())
-    print("\n".join(glass_stack(n)))
+    print('\n'.join(glass_stack(n)))

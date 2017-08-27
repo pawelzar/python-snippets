@@ -1,6 +1,6 @@
 def is_balanced(sequence):
     """Check if brackets in given sequence are properly closed."""
-    brackets = "([{)]}"
+    brackets = '([{)]}'
     stack = []
 
     for a in sequence:

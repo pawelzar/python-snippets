@@ -15,8 +15,8 @@ class SplitBudgetsTest(unittest.TestCase):
         self.assertEqual(split_budgets([5, 10, 5], 10), [3, 3, 4])
 
     def test_impossible(self):
-        self.assertEqual(split_budgets([1, 1, 1], 4), "IMPOSSIBLE")
-        self.assertEqual(split_budgets([20, 20, 40], 100), "IMPOSSIBLE")
+        self.assertEqual(split_budgets([1, 1, 1], 4), 'IMPOSSIBLE')
+        self.assertEqual(split_budgets([20, 20, 40], 100), 'IMPOSSIBLE')
 
 
 if __name__ == '__main__':

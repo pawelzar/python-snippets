@@ -4,7 +4,7 @@ def split_budgets(budget, gift):
     Returns list of shares for each budget.
     """
     if sum(budget) < gift:
-        return "IMPOSSIBLE"
+        return 'IMPOSSIBLE'
     else:
         division = []
         quantity = len(budget)

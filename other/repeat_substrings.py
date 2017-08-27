@@ -19,4 +19,4 @@ abbcccdddd
 """
 
 import re
-print("".join(str(int(x)*y) for x,y in re.findall('(\d+)([^0-9]+)', input())))
+print(''.join(str(int(x)*y) for x, y in re.findall('(\d+)([^0-9]+)', input())))

@@ -1,9 +1,9 @@
 """
 As Terry Pratchett explains in Men At Arms:
-"Trolls traditionally count like this: (...) one, two, three... many (...) many-one, many-two, many-three, many-many, many-many-one, many-many-two, many-many-three, many-many-many, many-many-many-one, many-many-many-two, many-many-many-three, LOTS."
+'Trolls traditionally count like this: (...) one, two, three... many (...) many-one, many-two, many-three, many-many, many-many-one, many-many-two, many-many-three, many-many-many, many-many-many-one, many-many-many-two, many-many-many-three, LOTS.'
 
 From there we can extrapolate the following extra rules:
-- after LOTS comes LOTS-one then LOTS-two and so on 
+- after LOTS comes LOTS-one then LOTS-two and so on
 - after LOTS-many-many-many-three comes LOTS-LOTS, then LOTS-LOTS-one, and so on
 - after LOTS-LOTS-LOTS-many-many-many-three comes LOTS-LOTS-LOTS-LOTS, then LOTS-LOTS-LOTS-LOTS-one and so on (because trolls' imagination only gets them so far)
 
@@ -26,7 +26,7 @@ one
 """
 
 n = int(input())
-out = ""
+out = ''
 if n/16 >= 1:
     out += 'LOTS-' * int(n/16)
     n %= 16

@@ -1,7 +1,7 @@
 """
 Your program must insert the correct operator (+, -, / or *) at the right index of an integer number N so that the resulting operation equals a given integer X.
 
-The operation is always valid and the result is always an integer. Plus "+" and minus "-" are the only operators that can be inserted at index 0.
+The operation is always valid and the result is always an integer. Plus '+' and minus '-' are the only operators that can be inserted at index 0.
 
 In each test, there is only one possible solution.
 
@@ -20,7 +20,7 @@ Output
 
 from operator import add, sub, mul, floordiv
 
-operators = {"+": add, "-": sub, "*": mul, "/": floordiv}
+operators = {'+': add, '-': sub, '*': mul, '/': floordiv}
 
 num, result = input().split()
 for i in range(len(num)):
@@ -29,7 +29,7 @@ for i in range(len(num)):
     for sign, action in operators.items():
         try:
             if action(a, b) == int(result):
-                print("{0}{2}{1}".format(a if a != 0 else "", num[i:], sign))
+                print('{0}{2}{1}'.format(a if a != 0 else '', num[i:], sign))
                 break
         except ZeroDivisionError:
             pass

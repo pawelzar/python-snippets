@@ -6,13 +6,13 @@ class SquaresGeneratorTest(unittest.TestCase):
     def test_simple(self):
         sq = g.squares()
         self.assertEqual(next(sq), 1,
-                         "Should return 1.")
+                         'Should return 1.')
         self.assertEqual(next(sq), 1,
-                         "Should return square of 1.")
+                         'Should return square of 1.')
         self.assertEqual(next(sq), 2,
-                         "Should return 2.")
+                         'Should return 2.')
         self.assertEqual(next(sq), 4,
-                         "Should return square of 2.")
+                         'Should return square of 2.')
 
     def test_listed_squares(self):
         squares_generator = g.squares()
@@ -42,23 +42,23 @@ class SquaresGeneratorTest(unittest.TestCase):
 class FibonacciGeneratorTest(unittest.TestCase):
     def test_empty(self):
         generated = [x for x in g.fibonacci(0)]
-        self.assertEqual(generated, [], "Should return empty list.")
+        self.assertEqual(generated, [], 'Should return empty list.')
 
     def test_singular(self):
         generated = [x for x in g.fibonacci(1)]
-        self.assertEqual(generated, [0], "Should return only one element.")
+        self.assertEqual(generated, [0], 'Should return only one element.')
 
     def test_few(self):
         generated = [x for x in g.fibonacci(6)]
         self.assertEqual(generated, [0, 1,	1, 2, 3, 5],
-                         "Should return 6 numbers from Fibonacci sequence.")
+                         'Should return 6 numbers from Fibonacci sequence.')
 
     def test_many(self):
         generated = [x for x in g.fibonacci(20)]
         proper = [0, 1,	1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,
                   610, 987, 1597, 2584, 4181]
         self.assertEqual(generated, proper,
-                         "Should return 20 numbers from Fibonacci sequence.")
+                         'Should return 20 numbers from Fibonacci sequence.')
 
 
 class SplitGeneratorTest(unittest.TestCase):

@@ -23,6 +23,6 @@ false
 
 import re
 
-s = "".join(sorted(input()))
+s = ''.join(sorted(input()))
 print(str(bool(len(s) > 7 and re.search('\d.*[A-Z].*[a-z]', s))).lower())
 # no match because there can be other signs between digits and letters

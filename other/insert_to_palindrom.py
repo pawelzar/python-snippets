@@ -23,7 +23,7 @@ word = input()
 i = 0
 possible = False
 while i <= len(word):
-    t = ""
+    t = ''
     for s in 'abcdefghijklmnopqrstuvwxyz':
         t = word[:i] + s + word[i:]
         if t == t[::-1]:

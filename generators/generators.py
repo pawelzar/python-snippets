@@ -24,7 +24,7 @@ class Generator:
     def split(sentence, sign):
         """Generates words from sentence, separated by given sign."""
         i = 0
-        out = ""
+        out = ''
         while i < len(sentence):
             k = sentence.find(sign, i)
             if k > 0:

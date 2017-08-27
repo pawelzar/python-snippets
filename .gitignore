@@ -6,3 +6,6 @@ __pycache__/
 # User
 *~
 .idea/
+.cache/
+.coverage
+cover/

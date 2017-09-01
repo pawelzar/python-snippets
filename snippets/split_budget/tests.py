@@ -1,8 +1,9 @@
-import unittest
+from unittest import TestCase
+
 from .solution import split_budgets
 
 
-class SplitBudgetsTest(unittest.TestCase):
+class SplitBudgetsTestCase(TestCase):
     def test_three_positive(self):
         self.assertEqual(split_budgets([3, 3, 3], 3), [1, 1, 1])
         self.assertEqual(split_budgets([10, 100, 100], 100), [10, 45, 45])
@@ -17,7 +18,3 @@ class SplitBudgetsTest(unittest.TestCase):
     def test_impossible(self):
         self.assertEqual(split_budgets([1, 1, 1], 4), 'IMPOSSIBLE')
         self.assertEqual(split_budgets([20, 20, 40], 100), 'IMPOSSIBLE')
-
-
-if __name__ == '__main__':
-    unittest.main()

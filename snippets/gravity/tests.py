@@ -1,8 +1,9 @@
-import unittest
+from unittest import TestCase
+
 from .solution import slide_down
 
 
-class GravityTest(unittest.TestCase):
+class GravityTestCase(TestCase):
     def test_single_element(self):
         art = [
             '.'
@@ -27,7 +28,7 @@ class GravityTest(unittest.TestCase):
 
         self.assertEqual(slide_down(art), result)
 
-    def test_simple(self):
+    def test_small_array(self):
         art = [
             '#.#',
             '.#.'
@@ -40,7 +41,7 @@ class GravityTest(unittest.TestCase):
 
         self.assertEqual(slide_down(art), result)
 
-    def test_medium(self):
+    def test_medium_array(self):
         art = [
             '...#...#.#.#...#.',
             '.#..#...#....#...',
@@ -59,7 +60,7 @@ class GravityTest(unittest.TestCase):
 
         self.assertEqual(slide_down(art), result)
 
-    def test_large(self):
+    def test_large_array(self):
         art = [
             '#####.#####.####..#####.#...#.#####.#####.#...#.#####',
             '#.....#...#.#...#...#...##..#.#.....#...#.##.##.#....',
@@ -77,7 +78,3 @@ class GravityTest(unittest.TestCase):
         ]
 
         self.assertEqual(slide_down(art), result)
-
-
-if __name__ == '__main__':
-    unittest.main()

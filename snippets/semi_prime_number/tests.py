@@ -1,8 +1,9 @@
-import unittest
+from unittest import TestCase
+
 from .solution import is_prime, is_semi_prime
 
 
-class PrimeTestCase(unittest.TestCase):
+class PrimeTestCase(TestCase):
     def test_positive(self):
         self.assertTrue(is_prime(2))
         self.assertTrue(is_prime(3))
@@ -23,7 +24,7 @@ class PrimeTestCase(unittest.TestCase):
         self.assertFalse(is_prime(4444))
 
 
-class SemiPrimeTestCase(unittest.TestCase):
+class SemiPrimeTestCase(TestCase):
     def test_positive(self):
         self.assertTrue(is_semi_prime(4))
         self.assertTrue(is_semi_prime(14))
@@ -42,7 +43,3 @@ class SemiPrimeTestCase(unittest.TestCase):
         self.assertFalse(is_semi_prime(810))
         self.assertFalse(is_semi_prime(4342))
         self.assertFalse(is_semi_prime(4444))
-
-
-if __name__ == '__main__':
-    unittest.main()

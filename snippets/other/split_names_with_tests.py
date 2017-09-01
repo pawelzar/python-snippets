@@ -1,4 +1,4 @@
-import unittest
+from unittest import TestCase
 
 
 def split_names(names):
@@ -12,7 +12,7 @@ def split_names(names):
     return {'male': male, 'female': female}
 
 
-class SplitNamesTest(unittest.TestCase):
+class SplitNamesTest(TestCase):
     def testMale(self):
         self.assertEqual(split_names(['Jan', 'Andrzej', 'Piotr']),
                          {'male': ['Jan', 'Andrzej', 'Piotr'], 'female': []})
@@ -32,7 +32,3 @@ class SplitNamesTest(unittest.TestCase):
     def testMaleNotInFemale(self):
         self.assertNotIn('Jan', split_names(
             ['Zofia', 'Ania', 'Zofia', 'Andrzej', 'Piotr'])['female'])
-
-
-if __name__ == '__main__':
-    unittest.main()

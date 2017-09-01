@@ -10,21 +10,18 @@ def grid_with_distance(width, height, point_1, point_2):
     :return: grid represented as list of strings
     """
     grid = []
+    closer = {0: '0', 1: '1'}
 
     for y in range(height):
         line = ''
         for x in range(width):
-            dist_1 = manhattan_distance((x, y), point_1)
-            dist_2 = manhattan_distance((x, y), point_2)
             if (x, y) == point_1 or (x, y) == point_2:
                 line += 'X'
             else:
-                if dist_1 < dist_2:
-                    line += '1'
-                elif dist_1 > dist_2:
-                    line += '2'
-                else:
-                    line += '0'
+                dist_1 = manhattan_distance((x, y), point_1)
+                dist_2 = manhattan_distance((x, y), point_2)
+                compare = (dist_1 < dist_2) - (dist_1 > dist_2)
+                line += closer.get(compare, '2')
         grid.append(line)
 
     return grid

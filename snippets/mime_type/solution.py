@@ -1,25 +1,29 @@
 import re
 
 
-def get_mimes(extensions, files):
+def mime_type(extensions, files):
     """
-    Provide list of known extensions with mime descriptions and list of files.
-    Returns list of corresponding extension for each file.
+    Determines mime types after files extensions.
+
+    :param extensions: list of extensions and corresponding mime types
+    separated by space
+    :param files: list of file names
+    :return: list of mime types for each of given file names
     """
     mime = {ext.lower(): mt for ext, mt in [e.split() for e in extensions]}
     assigned = []
 
     for name in files:
-        extension = re.search('\w*\.*(.\w+|.)$', name)
+        extension = re.search(r'\w*\.*(.\w+|.)$', name)
         assigned.append(mime.get(extension.group(1).lower(), 'UNKNOWN'))
 
     return assigned
 
-if __name__ == '__main__':
-    n = int(input())
-    q = int(input())
-    mime = {ext.lower(): mt for ext, mt in [input().split() for i in range(n)]}
 
-    for j in range(q):
-        extension = re.search('\w*\.*(.\w+|.)$', input())
-        print(mime.get(extension.group(1).lower(), 'UNKNOWN'))
+if __name__ == '__main__':
+    N = int(input())
+    Q = int(input())
+    EXTENSIONS = [input() for i in range(N)]
+    FILES = [input() for i in range(Q)]
+
+    print('\n'.join(mime_type(EXTENSIONS, FILES)))

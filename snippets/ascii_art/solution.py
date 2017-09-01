@@ -24,6 +24,7 @@ def ascii_art(width, height, art, text):
 
     return text_in_art
 
+
 if __name__ == '__main__':
     WIDTH = int(input())
     HEIGHT = int(input())

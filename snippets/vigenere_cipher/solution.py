@@ -1,5 +1,11 @@
 def decrypt_vigenere(message, key):
-    """Returns message decrypted using the Vigenère cipher."""
+    """
+    Decrypts message using the Vigenère cipher.
+
+    :param message: encrypted message
+    :param key:
+    :return: decrypted message
+    """
     message_numerical = [ord(x)-97 for x in message]
     key_numerical = [ord(x)-97 for x in key]
     return ''.join(' ' if a == -65 else chr(97 + (a-b) % 26)

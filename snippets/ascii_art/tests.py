@@ -31,7 +31,7 @@ class AsciiArtTestCase(TestCase):
             '#   ',
             '##  ',
             '#   ',
-            '### '
+            '### ',
         ]
 
         self.assertEqual(
@@ -44,7 +44,7 @@ class AsciiArtTestCase(TestCase):
             '  # ',
             ' ## ',
             '    ',
-            ' #  '
+            ' #  ',
         ]
 
         self.assertEqual(
@@ -77,10 +77,24 @@ class AsciiArtTestCase(TestCase):
             '###   # # # # #   #  #   #    # # # ',
             '###  ## # # ###  ##  #   #   ## # # ',
             '# #     # # # #      #   #      # # ',
-            '# #  #  # # # #  #   #   #   #  # # '
+            '# #  #  # # # #  #   #   #   #  # # ',
         ]
 
         self.assertEqual(
             ascii_art(self.width, self.height, self.art, 'M@NH@TT@N'), result,
             'Should place \'?\' for \'@\' in M@NH@TT@N.'
+        )
+
+    def test_upper_ascii_alphabet(self):
+        alphabet = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ?']
+        self.assertEqual(
+            ascii_art(1, 1, alphabet, 'Paweł Zarębski'), ['PAWE??ZAR?BSKI'],
+            'Should convert properly for one line upper ascii alphabet.'
+        )
+
+    def test_lower_ascii_alphabet(self):
+        alphabet = ['abcdefghijklmnopqrstuvwxyz?']
+        self.assertEqual(
+            ascii_art(1, 1, alphabet, 'Paweł Zarębski'), ['pawe??zar?bski'],
+            'Should convert properly for one line lower ascii alphabet.'
         )

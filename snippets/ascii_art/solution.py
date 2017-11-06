@@ -1,3 +1,6 @@
+from string import ascii_uppercase
+
+
 def ascii_art(width, height, art, text):
     """
     Represent text in ASCII art.
@@ -11,16 +14,14 @@ def ascii_art(width, height, art, text):
     text_in_art = [''] * height
 
     for sign in text.upper():
-        if ord(sign) in range(65, 91):  # uppercase letters in ASCII
+        if sign in ascii_uppercase:
+            start = ascii_uppercase.index(sign) * width
             for line in range(height):
-                start = (ord(sign) - 65) * width
-                end = ((ord(sign) - 65) + 1) * width
-                text_in_art[line] += art[line][start:end]
+                text_in_art[line] += art[line][start:start + width]
         else:
             for line in range(height):
-                # if character wasn't recognized then
-                # represent it as '?' (last sign in provided art)
-                text_in_art[line] += art[line][26 * width:]
+                # represent unknown character as '?' (last sign in given art)
+                text_in_art[line] += art[line][-width:]
 
     return text_in_art
 

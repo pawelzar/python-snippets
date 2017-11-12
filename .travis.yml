@@ -1,0 +1,9 @@
+language: python
+python:
+  - 3.6
+  - nightly
+install:
+  - pip install nose codecov
+script:
+  - nosetests --with-coverage
+  - codecov

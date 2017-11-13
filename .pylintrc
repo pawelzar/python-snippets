@@ -2,4 +2,4 @@
 ignore = tests.py
 
 [MESSAGES CONTROL]
-disable = C0103
+disable = C0103,C0111,W0123
